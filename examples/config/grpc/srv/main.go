@@ -44,13 +44,13 @@ func main() {
 	// new service
 	service := grpc.NewServer()
 	proto.RegisterSourceServer(service, new(Service))
-	ts, err := net.Listen("tcp", ":8600")
+	new_ts, err := net.Listen("tcp", ":8600")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	log.Infof("configServer started")
-	err = service.Serve(ts)
+	err = service.Serve(new_ts)
 	if err != nil {
 		log.Fatal(err)
 	}
