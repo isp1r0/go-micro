@@ -1,3 +1,3 @@
-FROM alpine:3.2
+FROM alpine:latest
 ADD greeter-srv /greeter-srv
 ENTRYPOINT [ "/greeter-srv" ]
